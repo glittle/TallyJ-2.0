@@ -39,3 +39,4 @@ Backup/Site.sln
 DatabaseScripts/DatabaseScripts_20150629015936.sqlproj
 UpgradeLog.htm
 DatabaseScripts/DatabaseScripts.jfm
+/Site/Properties/PublishProfiles/Win16a VM IIS.pubxml
