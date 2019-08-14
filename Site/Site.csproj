@@ -613,6 +613,7 @@
     <None Include="Properties\PublishProfiles\TallyJ3-staging - Web Deploy.pubxml" />
     <Content Include="Reports\BallotsTied.cshtml" />
     <Content Include="Reports\BallotsSame.cshtml" />
+    <None Include="Properties\PublishProfiles\Win16a UAT VM IIS.pubxml" />
     <None Include="Properties\PublishProfiles\Win16a VM IIS.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -749,6 +750,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.TallyJ3-staging - Web Deploy.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Win16a UAT VM IIS.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Win16a VM IIS.config">
