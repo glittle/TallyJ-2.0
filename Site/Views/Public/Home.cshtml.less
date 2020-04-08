@@ -9,6 +9,26 @@ section.features {
     text-decoration: none;
   }
 
+
+  .useV3 {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    font-weight: bold;
+    color: red;
+    font-size: 1.1em;
+
+    a {
+      color: red;
+      text-decoration: underline;
+      &:hover{
+        color: #ff2929;
+      }
+    }
+  }
+
+
   &.middle {
     h1, h2 {
       font-size: @baseFontSize * 1.5;
@@ -35,7 +55,6 @@ section.features a:active section {
 section.LoginPanel a {
   text-decoration: underline;
 }
-
 
 div.closer {
   position: absolute;
@@ -161,7 +180,7 @@ div.or {
 }
 
 section.CenterPanel {
-  min-height: 170px;
+  min-height: 190px;
 }
 
 section.CenterPanel.chosen {
