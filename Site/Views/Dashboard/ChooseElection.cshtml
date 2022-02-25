@@ -26,23 +26,25 @@
 </div>
 @if (UserSession.IsKnownTeller)
 {
-  <h3 class="MakeNew">Preparing for an Election?</h3>
-  <ul class="MakeNewList">
+    <h3 class="MakeNew">Preparing for an Election?</h3>
+    <p>All new elections must be created in <a href="https://v3.tallyj.com">TallyJ Version 3</a>.</p>
+
+  @*<ul class="MakeNewList">
     <li>
       Start a new election:
-      <button type="button" class="btn  btn-primary" id="btnCreate">New Election</button>
+      <button type="button" class="btn  btn-primary" disabled="disabled" id="btnCreate">New Election</button>
     </li>
     <li>
       <form name="formLoadFile" id="formLoadFile">
         <label for="loadFile">Or, load a previously saved Election file:</label>
-        <input id="loadFile" name="loadFile" type="file" />
+        <input id="loadFile" name="loadFile" disabled="disabled" type="file" />
       </form>
       <div id="loadingLog">
         <div id="log"></div>
         <div id="tempLog"></div>
       </div>
     </li>
-  </ul>
+  </ul>*@
 }
 else
 {

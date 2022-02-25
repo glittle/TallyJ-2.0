@@ -26,24 +26,24 @@ namespace TallyJ.Controllers
       if (electionModel.JoinIntoElection(guid, oldComputerGuid.AsGuid()))
       {
         return new
-                 {
-                   Locations = ContextItems.LocationModel.AllLocations.OrderBy(l => l.SortOrder).Select(l => new { l.Name, l.C_RowId }),
-                   Selected = true,
-                   ElectionName = UserSession.CurrentElectionName,
-                   ElectionGuid = UserSession.CurrentElectionGuid,
-                   CompGuid = UserSession.CurrentComputer.ComputerGuid,
-                   // Pulse = new PulseModel(this).Pulse()
-                 }.AsJsonResult();
+        {
+          Locations = ContextItems.LocationModel.AllLocations.OrderBy(l => l.SortOrder).Select(l => new { l.Name, l.C_RowId }),
+          Selected = true,
+          ElectionName = UserSession.CurrentElectionName,
+          ElectionGuid = UserSession.CurrentElectionGuid,
+          CompGuid = UserSession.CurrentComputer.ComputerGuid,
+          // Pulse = new PulseModel(this).Pulse()
+        }.AsJsonResult();
       }
-      return new {Selected = false}.AsJsonResult();
+      return new { Selected = false }.AsJsonResult();
     }
 
-//    [ForAuthenticatedTeller]
-//    public JsonResult CopyElection(Guid guid)
-//    {
-//      var model = new ElectionModel();
-//      return model.Copy(guid);
-//    }
+    //    [ForAuthenticatedTeller]
+    //    public JsonResult CopyElection(Guid guid)
+    //    {
+    //      var model = new ElectionModel();
+    //      return model.Copy(guid);
+    //    }
 
     [ForAuthenticatedTeller]
     public JsonResult UpdateElectionStatus(string state)
@@ -54,8 +54,12 @@ namespace TallyJ.Controllers
     [ForAuthenticatedTeller]
     public JsonResult CreateElection()
     {
-      var model = new ElectionModel();
-      return model.Create();
+      return new
+      {
+        Success = false
+      }.AsJsonResult();
+      // var model = new ElectionModel();
+      // return model.Create();
     }
 
     [ForAuthenticatedTeller]
@@ -84,7 +88,7 @@ namespace TallyJ.Controllers
     public JsonResult ResetCache()
     {
       // wipe cached results - this wipes for everyone looking at this election
-      
+
       new CacherHelper().DropAllCachesForThisElection();
 
       return "Cache cleared.".AsJsonResult(JsonRequestBehavior.AllowGet);
